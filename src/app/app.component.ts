@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  componenetVariable = "Here are some links to help you start";
+
+  private clickHandler(): void {
+    alert("Test clcik");
+  }
 }
