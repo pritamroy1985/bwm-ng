@@ -1,17 +1,30 @@
+// Angular modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { Routes, RouterModule} from '@angular/router';
+// Custom components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './common/header/header.component';
+import { RentalComponent } from './rental/rental.component';
+import { TempComponent } from './temp/temp.component';
+// Rental Component module
+import { RentalModule } from './rental/rental-module';
+
+const routes = [
+  {path: '', component: RentalComponent},
+  {path: 'temp', component: TempComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    TempComponent
   ],
   imports: [
-    BrowserModule
+    RouterModule.forRoot(routes),
+    BrowserModule,
+    RentalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
